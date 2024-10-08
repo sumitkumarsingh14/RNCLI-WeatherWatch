@@ -1,4 +1,4 @@
-# 🌩️ Weather Watch [Using React Native CLI]
+# 🌩️ Weather Watch
 
 Introducing *Weather Watch*, the app that delivers accurate weather forecasts, ensuring you’re always prepared for the day’s weather with a smile!
 
