@@ -1,19 +1,32 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, { useState } from 'react';
+import HomeScreen from './src/screens/HomeScreen';
+import SplashScreen from './src/screens/SplashScreen';
+import useWeather from './src/hooks/useWeather';
 
-export default function App() {
+const App = () => {
+  const [isSplashVisible, setSplashVisible] = useState(true);
+  const { location, setLocation, weather, loading, searchWeather, error } = useWeather('Delhi');
+
+  const handleAnimationEnd = () => {
+    setSplashVisible(false);
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <>
+      {isSplashVisible ? (
+        <SplashScreen onAnimationEnd={handleAnimationEnd} />
+      ) : (
+        <HomeScreen
+          location={location}
+          setLocation={setLocation}
+          weather={weather}
+          loading={loading}
+          searchWeather={searchWeather}
+          error={error}
+        />
+      )}
+    </>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

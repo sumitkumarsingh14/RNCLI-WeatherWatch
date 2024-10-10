@@ -1,13 +1,19 @@
-import 'react-native';
 import React from 'react';
+import { render, fireEvent, waitFor, act } from '@testing-library/react-native';
 import App from '../App';
 
-import {render, screen} from '@testing-library/react-native';
+jest.mock('../src/api/weatherApi', () => ({
+  getWeatherData: jest.fn(),
+  getLocationData: jest.fn(),
+}));
 
-it('should render the App', () => {
-  render(<App />);
+describe('App', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
-  expect(
-    screen.getByText('Open up App.tsx to start working on your app!'),
-  ).toBeTruthy();
+  it('renders SplashScreen initially', () => {
+    const { getByText } = render(<App />);
+    expect(getByText('Weather App')).toBeTruthy();
+  });
 });
