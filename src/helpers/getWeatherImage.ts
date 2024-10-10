@@ -328,8 +328,16 @@ const items: Record<WeatherCode, WeatherImage> = {
  * @param weatherCode The WMO weather code
  * @returns A "day" image representation of the WMO weather code
  */
-function getWeatherImage(weatherCode: WeatherCode) {
-  // Write implementation for this function to return the "day" image for a given weather code.
+
+function getWeatherImage(weatherCode: WeatherCode, isDay: boolean) {
+  const weatherData = items[weatherCode];
+
+  if (!weatherData) {
+    throw new Error(`Weather code ${weatherCode} is not supported.`);
+  }
+
+  const timeOfDay = isDay ? 'day' : 'night';
+  return weatherData[timeOfDay];
 }
 
 export default getWeatherImage;

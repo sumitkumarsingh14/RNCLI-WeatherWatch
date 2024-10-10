@@ -1,0 +1,74 @@
+# React Native
+
+# Node modules
+node_modules/
+
+# Build directories
+android/.gradle/
+android/app/build/
+android/app/src/main/assets/index.android.bundle
+android/app/src/main/res/drawable-*
+android/app/src/main/res/mipmap-*
+android/app/src/main/res/xml/*
+
+# iOS
+ios/build/
+ios/Pods/
+ios/*.xcworkspace
+ios/**/*.xcworkspace
+ios/**/*.xcodeproj
+ios/**/*.pbxproj
+ios/**/*.plist
+ios/**/*.lock
+ios/**/*.xcscheme
+ios/**/*.xcschemes/
+ios/**/*.tbd
+ios/**/*.app
+
+# React Native
+*.jsbundle
+*.jks
+*.keystore
+*.hprof
+*.gradle
+*.log
+*.iml
+*.swp
+*.swo
+*.zip
+*.tar.gz
+*.tgz
+*.gz
+*.rar
+*.bak
+.DS_Store
+
+# macOS
+*.DS_Store
+
+# Environment files
+.env
+.env.* # Include if you're using different env files like .env.development, .env.production, etc.
+
+# Expo
+.expo/
+.expo-shared/
+
+# Miscellaneous
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDE specific
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Build outputs
+build/
+dist/
